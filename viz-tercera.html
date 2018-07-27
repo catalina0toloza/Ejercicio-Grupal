@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+<title>Primera</title>
+</head>
+<body>
+<!--Nada más que p5.js para dibujar en el body de esta página-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+<script>
+    
+    
+    var comunaSantiago; 
+function preload (){
+    
+    comunaSantiago=loadTable("https://raw.githubusercontent.com/catalina0toloza/csv/gh-pages/comuna.csv", "csv", "header");
+    
+}
+    
+    
+function setup(){
+  var canvas = createCanvas(windowWidth,500);
+  canvas.position(0,0)
+  noStroke();
+  smooth();
+}
+function draw(){
+  background(137, 139, 220);
+  fill(255);
+text(
+comunaSantiago.get(0,7),
+    100,
+    60);
+text("ÍNDICE DE POBREZA",width/2-70,50)
+  
+    
+   
+text(
+comunaSantiago.get(1,7),
+    100,
+    120);
+    
+text(
+comunaSantiago.get(2,7),
+    100,
+    180);    
+
+text(
+comunaSantiago.get(3,7),
+    100,
+    240);  
+    
+text(
+comunaSantiago.get(4,7),
+    100,
+    300);  
+} 
+
+function windowResized() {
+  resizeCanvas(windowWidth, 500);
+}   
+</script>
+</body>
+</html>
